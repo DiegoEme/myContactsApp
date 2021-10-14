@@ -5,6 +5,7 @@ import { SearchComponent } from './pages/search/search.component';
 import { ContactDetailComponent } from './pages/contact-detail/contact-detail.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ListComponent } from './pages/list/list.component';
+import { ContactsRoutingModule } from './contacts-routing.module';
 
 
 
@@ -17,7 +18,8 @@ import { ListComponent } from './pages/list/list.component';
     ListComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ContactsRoutingModule
   ]
 })
 export class ContactsModule { }
