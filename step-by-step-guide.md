@@ -23,5 +23,14 @@
         - Repeat above steps(lazy loading) for contactsRouting
         - Take into account that adding and editing a contact requires the same component
         - Make use of the Home component, as this would be the parent route in the contacts-routing module. Remember to add <router-outlet> to this component in order to se its children components when navigating to their routes. Coult this be the navbar????
-3. 13.3
+3. In this step we will be working in the material module, where you hace be sure to export all the modules contained here
+    - Install angular flex layout npm i @angular/flex-layout @angular/cdk and import in contacts module (flex layout will be used only here)
+    - Import all the components from angular material in the material module and also import the material module into the contacts module (or the module where the components will be used)
+    - Create json server and db.json and run it with json-server --watch db.json
+    - Create a service in contacts/services named contacts.service to handle the http requests from the contacts' components
+    - Import the HttpClientModule globally in app.module
+    - In contacts.service import HttpClient and pass it to the constructor. Create a function getContacts() and make an http get request to bring all the contacts from the server
+    - In the List component inside the ngOnInit make use of the service and subscribe to the getContacts method to fetch the contacts to this component. 
+    - Create a interfaces folder inside contacts and create the interfaces for the contacts. this way you can and types to the data to be fetched in the service
+    - You can now display the fetched contacts in the list component.
 

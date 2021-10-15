@@ -1,3 +1,29 @@
-<h1>CONTACTOS APP</h1>
-<hr>
+<mat-toolbar>
+    <!--Contacts list  -->
+    <button routerLink="./list" mat-icon-button >        
+        <mat-icon>people</mat-icon>        
+    </button>    
+
+    <!--Add contact  -->    
+    <button routerLink="./add" mat-icon-button >
+        
+        <mat-icon>person_add</mat-icon>
+    </button>
+
+    <!--search contact  -->    
+    <button routerLink="./search" mat-icon-button >
+        <mat-icon>search</mat-icon>
+    </button>
+
+    <!--My favourites  -->    
+    <button mat-icon-button >
+        <mat-icon>favorite</mat-icon>
+    </button>
+
+    <span class="example-spacer"></span>
+    <button mat-icon-button color="accent">
+      <mat-icon>logout</mat-icon>
+    </button>
+</mat-toolbar>
+  
 <router-outlet></router-outlet>
