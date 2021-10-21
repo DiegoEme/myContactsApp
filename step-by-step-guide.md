@@ -36,4 +36,6 @@
     - 13.11
 3.1. After creating the above component it is time to test it. In this case we are gonna test the ngOnInit function that populates the contacts array after making a call to the service. In the spec file import the service, the HttpClientTestingModule, the contact interface and the component. In the first beforeEach configure the testbed and in the second initialize variables. Use the spyOn method to fake the call to the server that returns an observable, then act an then assert.
 
+4. Creating a pipe for the contacts images. ng g pipe image. and its test
+
 

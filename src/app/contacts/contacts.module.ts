@@ -9,6 +9,8 @@ import { SearchComponent } from './pages/search/search.component';
 import { ContactDetailComponent } from './pages/contact-detail/contact-detail.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ListComponent } from './pages/list/list.component';
+import { ContactCardComponent } from './components/contact-card/contact-card.component';
+import { ImagePipe } from './pipes/image.pipe';
 
 
 
@@ -19,7 +21,9 @@ import { ListComponent } from './pages/list/list.component';
     SearchComponent,
     ContactDetailComponent,
     HomeComponent,
-    ListComponent
+    ListComponent,
+    ContactCardComponent,
+    ImagePipe
   ],
   imports: [
     CommonModule,
