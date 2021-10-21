@@ -23,7 +23,7 @@
         - Repeat above steps(lazy loading) for contactsRouting
         - Take into account that adding and editing a contact requires the same component
         - Make use of the Home component, as this would be the parent route in the contacts-routing module. Remember to add <router-outlet> to this component in order to se its children components when navigating to their routes. Coult this be the navbar????
-3. In this step we will be working in the material module, where you hace be sure to export all the modules contained here
+3. In this step we will be working in the material module, where you have to be sure to export all the modules contained here
     - Install angular flex layout npm i @angular/flex-layout @angular/cdk and import in contacts module (flex layout will be used only here)
     - Import all the components from angular material in the material module and also import the material module into the contacts module (or the module where the components will be used)
     - Create json server and db.json and run it with json-server --watch db.json
@@ -33,4 +33,7 @@
     - In the List component inside the ngOnInit make use of the service and subscribe to the getContacts method to fetch the contacts to this component. 
     - Create a interfaces folder inside contacts and create the interfaces for the contacts. this way you can and types to the data to be fetched in the service
     - You can now display the fetched contacts in the list component.
+    - 13.11
+3.1. After creating the above component it is time to test it. In this case we are gonna test the ngOnInit function that populates the contacts array after making a call to the service. In the spec file import the service, the HttpClientTestingModule, the contact interface and the component. In the first beforeEach configure the testbed and in the second initialize variables. Use the spyOn method to fake the call to the server that returns an observable, then act an then assert.
+
 
