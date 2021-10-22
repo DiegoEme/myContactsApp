@@ -16,13 +16,13 @@
     </mat-card-content>
 
     <mat-card-actions>
-        <button mat-icon-button matTooltip="See contact details">
+        <button [routerLink]="['/contacts/contact', contact.name]" mat-icon-button matTooltip="See contact details">
             <mat-icon>visibility</mat-icon>
         </button>
-        <button mat-icon-button matTooltip="Edit contact">
+        <button [routerLink]="['/contacts/edit', contact.name]" mat-icon-button matTooltip="Edit contact">
             <mat-icon>edit</mat-icon>
         </button>
-        <button mat-icon-button matTooltip="Delete contact">
+        <button  mat-icon-button matTooltip="Delete contact">
             <mat-icon>delete</mat-icon>
         </button>
         

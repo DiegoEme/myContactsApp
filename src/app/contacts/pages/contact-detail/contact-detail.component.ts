@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-contact-detail',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactDetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.route.params.subscribe(params => console.log('los params',params))
   }
 
 }
