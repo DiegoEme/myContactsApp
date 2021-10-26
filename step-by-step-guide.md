@@ -22,7 +22,7 @@
         - In appRoutingModule, import the authModule which will bring the login and register components using: loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) and path: 'auth'
         - Repeat above steps(lazy loading) for contactsRouting
         - Take into account that adding and editing a contact requires the same component
-        - Make use of the Home component, as this would be the parent route in the contacts-routing module. Remember to add <router-outlet> to this component in order to se its children components when navigating to their routes. Coult this be the navbar????
+        - Make use of the Home component, as this would be the parent route in the contacts-routing module. Remember to add <router-outlet> to this component in order to se its children components when navigating to their routes. Coult this be the navbar? YES
 3. In this step we will be working in the material module, where you have to be sure to export all the modules contained here
     - Install angular flex layout npm i @angular/flex-layout @angular/cdk and import in contacts module (flex layout will be used only here)
     - Import all the components from angular material in the material module and also import the material module into the contacts module (or the module where the components will be used)
@@ -40,8 +40,20 @@
     - TODO: Test the routerlinks!!!! in contact-card
 6. Contatc-Detail. Create a method in a service that retrieves only one contact when passed its id. 
     - Inject the service in contact-detail and subscribe to it, get the data from the received contact and you can now display its info in the ui. You will realize that you will encounter a chain of subscribes. One to get the params from the url and the second to access the service. To chain these two together you can use the swithcMap operator. However this is not strictly nesessary because you can just subscribe to onw and then with the response of the first subscribe to the other.
+    - Create the ui for contact-detail
 
 6.1 Test the ngOnInit in the contact-detail component. for the test to work remeber to import all the dependencies that are injected in the component such as contactsService, HttpClientTestingModule and RouterTestingModule
-13.16
+7. mat-autocomplete and search Bar
+    - You will realize that in order to implement this component from angular material you also need to import some others components and libraries like matFormFieldModule and matFormModule, matInputModule and speciale FormModule in the contacts.module, this will enable ngModel
+    - In the search bar you have to bind the controller with the ui. For this, create the searTerm variable and bind it to the input inside the form tag with [(ngModel)]
+    - In the controller, set the variable contacts which will have an array of contacts to be shown in the mat-option tag
+    - Implement the (input) event in the input field which will trigger everytime you press a key    
+    - The json-server has the option to send query parameters in the url addig ?q= like this: http://localhost:3000/contacts?q=bob this call will bring all the contacts that have bob in any of their properties
+    - Bring the contacts using the above service sending the searchTerm as a parameter.
+    - in the mat-autocomplete tag insert the event (optionSelected) this is a built-in function and pass in the $event. You will see that the event has the contact info. Set the searchTerm to this value to display the selectedvalue in the input field. To display the selected contact on the ui call the service with the selected contact in this function
+-todo: test autocomplete y funcionts y servicios de search
+8. 14.1
+    
+
 
 

@@ -1,1 +1,36 @@
-<p>search works!</p>
+<div class="container">
+    <div>        
+        <mat-divider></mat-divider>
+    </div>
+    
+    <div>
+        <mat-form-field class="example-full-width" >
+            <mat-label>Search</mat-label>
+            <input type="text"
+                   placeholder="Pick one"
+                   aria-label="Number"
+                   matInput
+                   [(ngModel)] = "searchTerm"
+                   (input) = "search()"
+                   [matAutocomplete]="auto">
+            <mat-autocomplete 
+                autoActiveFirstOption 
+                #auto="matAutocomplete"
+                (optionSelected) = "optionSelected($event)">
+              <mat-option *ngFor="let contact of contacts" [value]="contact">
+                {{contact.name}}
+              </mat-option>
+              <mat-option *ngIf="contacts.length === 0 && searchTerm.length > 0">
+                Nothing found with {{searchTerm}}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+    </div>
+    
+    <div>
+        <app-contact-card *ngIf="selectedContact" [contact]="selectedContact"></app-contact-card>
+    </div>
+</div>
+
+
+

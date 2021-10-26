@@ -1,0 +1,11 @@
+.container {
+    padding: 20px;
+    margin: auto;
+    max-width: 600px;
+    
+}
+
+.example-full-width {
+    width: 100%;    
+}
+
