@@ -1,1 +1,23 @@
-<h1>Hi, {{contact.name}}</h1>
+
+<div class="container">
+    <mat-card class="example-card">
+        <mat-card-header>      
+          <mat-card-title>{{contact.name}}</mat-card-title>
+          <mat-card-subtitle>{{contact.number}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]="contact | image" alt="{{contact.name}}">
+        <mat-card-content>
+          <p>
+           {{contact.desc}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <!-- <button mat-button>LIKE</button>
+          <button mat-button>SHARE</button> -->
+          <button mat-button routerLink="./list">
+            <mat-icon>keyboard_return</mat-icon>
+          </button>
+        </mat-card-actions>
+    </mat-card>
+</div>
+

@@ -1,0 +1,10 @@
+.container {   
+    height: 100%;
+    background-color: #121212;
+    padding: 20px;
+}
+
+.example-card{
+    max-width: 400px;
+    margin: auto;
+}

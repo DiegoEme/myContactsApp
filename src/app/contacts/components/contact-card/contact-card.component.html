@@ -12,7 +12,7 @@
     </mat-card-title-group>
 
     <mat-card-content>
-        {{contact.desc}}
+        {{contact.desc | slice:0:60}} ...
     </mat-card-content>
 
     <mat-card-actions>
@@ -30,5 +30,4 @@
             <mat-icon>favorite_border</mat-icon>
         </button>
       </mat-card-actions>
-   
 </mat-card>

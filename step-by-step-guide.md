@@ -32,8 +32,7 @@
     - In contacts.service import HttpClient and pass it to the constructor. Create a function getContacts() and make an http get request to bring all the contacts from the server
     - In the List component inside the ngOnInit make use of the service and subscribe to the getContacts method to fetch the contacts to this component. 
     - Create a interfaces folder inside contacts and create the interfaces for the contacts. this way you can and types to the data to be fetched in the service
-    - You can now display the fetched contacts in the list component.
-    - 13.11
+    - You can now display the fetched contacts in the list component.    
 3.1. After creating the above component it is time to test it. In this case we are gonna test the ngOnInit function that populates the contacts array after making a call to the service. In the spec file import the service, the HttpClientTestingModule, the contact interface and the component. In the first beforeEach configure the testbed and in the second initialize variables. Use the spyOn method to fake the call to the server that returns an observable, then act an then assert.
 
 4. Creating a pipe for the contacts images. ng g pipe image and its test
@@ -43,6 +42,6 @@
     - Inject the service in contact-detail and subscribe to it, get the data from the received contact and you can now display its info in the ui. You will realize that you will encounter a chain of subscribes. One to get the params from the url and the second to access the service. To chain these two together you can use the swithcMap operator. However this is not strictly nesessary because you can just subscribe to onw and then with the response of the first subscribe to the other.
 
 6.1 Test the ngOnInit in the contact-detail component. for the test to work remeber to import all the dependencies that are injected in the component such as contactsService, HttpClientTestingModule and RouterTestingModule
-
+13.16
 
 
