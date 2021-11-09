@@ -21,4 +21,8 @@ export class ContactsService {
   getOptionsAutoComplete(term: string): Observable<Contact[]> {
     return this.http.get<Contact[]>(`http://localhost:3000/contacts?q=${term}&_limit=5`)
   }
+  
+  addContact(contact: Contact): Observable<Contact> {
+    return this.http.post<Contact>(`http://localhost:3000/contacts/`, contact)
+  }
 }

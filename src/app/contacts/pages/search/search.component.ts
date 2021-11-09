@@ -25,8 +25,8 @@ export class SearchComponent implements OnInit {
 
   }
 
-  optionSelected(event: MatAutocompleteSelectedEvent){
-    const contact: Contact = event.option.value;
+  optionSelected(e: Contact){    
+    const contact: Contact = e;
     this.searchTerm = contact.name
 
     this.contactsService.getOneContact(contact.id!)

@@ -32,6 +32,7 @@ import { FormsModule } from '@angular/forms';
     FlexLayoutModule,
     MaterialModule,
     FormsModule
-  ]
+  ], 
+  exports: [ImagePipe]
 })
 export class ContactsModule { }

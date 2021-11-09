@@ -16,7 +16,7 @@
             <mat-autocomplete 
                 autoActiveFirstOption 
                 #auto="matAutocomplete"
-                (optionSelected) = "optionSelected($event)">
+                (optionSelected) = "optionSelected($event.option.value)">
               <mat-option *ngFor="let contact of contacts" [value]="contact">
                 {{contact.name}}
               </mat-option>

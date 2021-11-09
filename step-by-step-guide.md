@@ -51,8 +51,16 @@
     - The json-server has the option to send query parameters in the url addig ?q= like this: http://localhost:3000/contacts?q=bob this call will bring all the contacts that have bob in any of their properties
     - Bring the contacts using the above service sending the searchTerm as a parameter.
     - in the mat-autocomplete tag insert the event (optionSelected) this is a built-in function and pass in the $event. You will see that the event has the contact info. Set the searchTerm to this value to display the selectedvalue in the input field. To display the selected contact on the ui call the service with the selected contact in this function
--todo: test autocomplete y funcionts y servicios de search
-8. 14.1
+
+7.1 Testing search component
+    - The first test that is failing is the "should create" which is fixed by importing the dependecies in the test, in this case, contactsService which is also added to the providers array in the first beforeEaach, the HttpClientTestingModule which is added to the imports array and MatAutoCompleteModule
+    - For some strange reason the tests from contactDetail component were failing after implementing the previous test. I fixed it by importting the ImagePipe in the test and adding it to the declarations module
+    TODO: test event bindings: when user clicks autocomplete, when user 
+8. 14.1 CRUD - add a contact with a picture and delete it
+    - Create the form with the inputs for the contact and bind the inputs using ngModel with an initially empty contact
+    - Create the save method
+    - Create the service addContact which is a post request that sends the contact and returns the same contact as an observable
+
     
 
 

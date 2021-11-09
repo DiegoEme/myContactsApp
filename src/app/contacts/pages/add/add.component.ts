@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Contact } from '../../interfaces/contacts.interface';
+import { ContactsService } from '../../services/contacts.service';
 
 @Component({
   selector: 'app-add',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddComponent implements OnInit {
 
-  constructor() { }
+  contact: Contact = {
+    name: "",
+    lastname: "",
+    number: "",
+    desc: "",
+    image: ""
+  }
+
+  constructor(private contactsService: ContactsService) { }
 
   ngOnInit(): void {
+  }
+
+  save(){
+    if(this.contact.name.trim().length === 0){
+      return;
+    }
+
+    this.contactsService.addContact(this.contact).subscribe((res) => console.log('respuiesta', res))
+
   }
 
 }

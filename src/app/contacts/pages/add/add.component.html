@@ -1,1 +1,54 @@
-<p>add works!</p>
+<div class="container">
+
+    <div fxLayout="row" 
+         fxLayout.xs="column"    
+         fxLayoutGap="40px">
+
+        <div fxFlex="50" fxLayout="column">
+
+            <mat-form-field fxFlex="90">
+                <mat-label>Name</mat-label>
+                <input matInput 
+                       required
+                       [(ngModel)]="contact.name">
+            </mat-form-field>
+
+            <mat-form-field fxFlex="90">
+                <mat-label>Last Name</mat-label>
+                <input matInput 
+                       [(ngModel)]="contact.lastname">
+            </mat-form-field>
+
+            <mat-form-field fxFlex="90">
+                <mat-label>Number</mat-label>
+                <input matInput 
+                       required
+                       [(ngModel)]="contact.number">
+            </mat-form-field>
+
+            <mat-form-field fxFlex="90">
+                <mat-label>Picture</mat-label>
+                <input matInput 
+                       type="url"
+                       [(ngModel)]="contact.image">
+            </mat-form-field>
+
+            <mat-form-field fxFlex="90">
+                <mat-label>Description</mat-label>
+                <textarea matInput
+                          [(ngModel)]="contact.desc">
+                </textarea>
+            </mat-form-field>
+
+            <button (click)="save()" mat-raised-button>
+                <mat-icon>save</mat-icon>
+            </button>
+
+        </div>
+    
+        <div fxFlex="50">
+            <img [src]="contact | image" alt="">
+        </div>
+    
+    </div>
+</div>

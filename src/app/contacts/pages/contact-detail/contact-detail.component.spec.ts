@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { ImagePipe } from '../../pipes/image.pipe';
 import { ContactDetailComponent } from './contact-detail.component';
 import { Contact } from '../../interfaces/contacts.interface';
 import { ContactsService } from '../../services/contacts.service';
@@ -14,8 +14,8 @@ describe('ContactDetailComponent', () => {
  
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ContactDetailComponent ],
-      imports: [HttpClientTestingModule, RouterTestingModule],
+      declarations: [ ContactDetailComponent, ImagePipe],
+      imports: [HttpClientTestingModule, RouterTestingModule, ],
       providers: [ContactsService]
     })
     .compileComponents();
