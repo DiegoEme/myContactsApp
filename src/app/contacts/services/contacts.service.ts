@@ -25,4 +25,8 @@ export class ContactsService {
   addContact(contact: Contact): Observable<Contact> {
     return this.http.post<Contact>(`http://localhost:3000/contacts/`, contact)
   }
+
+  editContact(contact: Contact): Observable<Contact> {
+    return this.http.put<Contact>(`http://localhost:3000/contacts/${contact.id}`, contact)
+  }
 }

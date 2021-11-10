@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Contact } from '../../interfaces/contacts.interface';
 import { ContactsService } from '../../services/contacts.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { switchMap } from 'rxjs/operators'
 
 @Component({
   selector: 'app-add',
@@ -17,18 +19,30 @@ export class AddComponent implements OnInit {
     image: ""
   }
 
-  constructor(private contactsService: ContactsService) { }
+  contactId: string = ""
+
+  constructor(private contactsService: ContactsService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
+    this.route.params
+      .pipe(
+        switchMap(({id}) => this.contactsService.getOneContact(id))
+      )
+      .subscribe(contact => this.contact = contact)
   }
 
   save(){
     if(this.contact.name.trim().length === 0){
       return;
     }
-
-    this.contactsService.addContact(this.contact).subscribe((res) => console.log('respuiesta', res))
+    if(this.contact.id){
+      this.contactsService.editContact(this.contact).subscribe(contact => this.contact = contact)
+    } else {
+      this.contactsService.addContact(this.contact).subscribe((contact) => this.router.navigate(['/contacts/contact', contact.id]))
+    }
 
   }
+
+
 
 }

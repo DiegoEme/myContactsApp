@@ -60,6 +60,11 @@
     - Create the form with the inputs for the contact and bind the inputs using ngModel with an initially empty contact
     - Create the save method
     - Create the service addContact which is a post request that sends the contact and returns the same contact as an observable
+    - CRUD -> EDIT: 
+    - Edit uses the same component as add, then in the add component you have to fetch the data of the current user using the id in the params in the url. like this: this.route.params.subscribe
+    - As soon as you get the id from the url fetch that user using the service
+    - You can combine these last two subscribe using swithcMap
+    - Now you have to create a new service to edit the contact
 
     
 
