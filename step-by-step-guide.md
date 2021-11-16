@@ -65,6 +65,7 @@
     - As soon as you get the id from the url fetch that user using the service
     - You can combine these last two subscribe using swithcMap
     - Now you have to create a new service to edit the contact
+    -CRUD DELETE: 9-eleiminar registros
 
     
 

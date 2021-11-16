@@ -29,4 +29,8 @@ export class ContactsService {
   editContact(contact: Contact): Observable<Contact> {
     return this.http.put<Contact>(`http://localhost:3000/contacts/${contact.id}`, contact)
   }
+
+  deleteContact(contact: Contact): Observable<any> {
+    return this.http.delete<any>(`http://localhost:3000/contacts/${contact.id}`)
+  }
 }

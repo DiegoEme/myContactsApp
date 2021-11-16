@@ -11,9 +11,13 @@ import { ContactsService } from '../../services/contacts.service';
 export class ListComponent implements OnInit {
 
   contacts: Contact[] = []
+ 
 
-  constructor(private contactsService: 
-    ContactsService) { }
+  constructor(private contactsService: ContactsService) { }
+
+  refreshContactList(){
+    this.ngOnInit()
+  }
 
   ngOnInit(): void {
     this.contactsService.getContacts()
@@ -22,7 +26,5 @@ export class ListComponent implements OnInit {
          console.log(this.contacts)
     })
   }
-
-  
 
 }

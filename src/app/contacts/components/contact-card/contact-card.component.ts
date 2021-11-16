@@ -1,5 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 import { Contact } from '../../interfaces/contacts.interface';
+import { ContactsService } from '../../services/contacts.service';
 
 @Component({
   selector: 'app-contact-card',
@@ -14,11 +16,17 @@ export class ContactCardComponent implements OnInit {
     number:   '',
     desc:     '',
     image:    'test.jpg'
-}
+  }
+
+  @Output() deleted: EventEmitter<any> = new EventEmitter()
   
-  constructor() { }
+  constructor(private contactsService: ContactsService, private router: Router) { }
   
   ngOnInit(): void {
+  }
+
+  delete(contact: Contact){
+    this.contactsService.deleteContact(contact).subscribe((res) => this.deleted.emit())
   }
 
 }

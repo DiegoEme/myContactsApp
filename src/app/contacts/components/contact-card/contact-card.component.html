@@ -22,7 +22,7 @@
         <button [routerLink]="['/contacts/edit', contact.id]" mat-icon-button matTooltip="Edit contact">
             <mat-icon>edit</mat-icon>
         </button>
-        <button  mat-icon-button matTooltip="Delete contact">
+        <button (click)="delete(contact)" mat-icon-button matTooltip="Delete contact">
             <mat-icon>delete</mat-icon>
         </button>
         
