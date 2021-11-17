@@ -12,6 +12,7 @@ import { ListComponent } from './pages/list/list.component';
 import { ContactCardComponent } from './components/contact-card/contact-card.component';
 import { ImagePipe } from './pipes/image.pipe';
 import { FormsModule } from '@angular/forms';
+import { FavoritesComponent } from './pages/favorites/favorites.component';
 
 
 
@@ -24,7 +25,8 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     ListComponent,
     ContactCardComponent,
-    ImagePipe
+    ImagePipe,
+    FavoritesComponent
   ],
   imports: [
     CommonModule,

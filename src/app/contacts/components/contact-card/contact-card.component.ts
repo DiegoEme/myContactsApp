@@ -18,6 +18,8 @@ export class ContactCardComponent implements OnInit {
     image:    'test.jpg'
   }
 
+  @Input() addedToFavorites: boolean = false
+
   @Output() deleted: EventEmitter<any> = new EventEmitter()
   
   constructor(private contactsService: ContactsService, private router: Router) { }
@@ -29,4 +31,11 @@ export class ContactCardComponent implements OnInit {
     this.contactsService.deleteContact(contact).subscribe((res) => this.deleted.emit())
   }
 
+  addToFavorites(contact: Contact){       
+    this.contactsService.addToFavorites(contact).subscribe(() => this.addedToFavorites = true)
+  }
+
+  removeFromFavorites(contact: Contact){
+    this.contactsService.removeFromFavoites(contact).subscribe(() => this.addedToFavorites = false)
+  }
 }

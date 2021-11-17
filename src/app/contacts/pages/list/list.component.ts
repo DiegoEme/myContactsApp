@@ -11,20 +11,36 @@ import { ContactsService } from '../../services/contacts.service';
 export class ListComponent implements OnInit {
 
   contacts: Contact[] = []
- 
+  favorites: Contact[] = []
 
   constructor(private contactsService: ContactsService) { }
 
-  refreshContactList(){
-    this.ngOnInit()
+  ngOnInit(): void {
+    this.getContactsList()
+    this.getFavorites()
   }
 
-  ngOnInit(): void {
+  getContactsList(){
     this.contactsService.getContacts()
-      .subscribe((contacts) => {
-         this.contacts = contacts
-         console.log(this.contacts)
+    .subscribe((contacts) => {
+       this.contacts = contacts
+       //this.getFavorites()
     })
+  }
+
+  refreshContactList(){
+    this.getContactsList()
+  }
+
+  getFavorites(){
+    this.contactsService.getFavorites().subscribe(fav => {
+      console.log("favorites service called", fav)
+      this.favorites = fav
+    })
+  }
+
+  isContactAFavorite(contact: Contact): boolean {
+    return this.favorites.some((item) => item.id === contact.id)
   }
 
 }

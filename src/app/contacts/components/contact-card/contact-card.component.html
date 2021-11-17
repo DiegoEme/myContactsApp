@@ -26,8 +26,12 @@
             <mat-icon>delete</mat-icon>
         </button>
         
-        <button mat-icon-button matTooltip="Add to favorites">
+        <button *ngIf="!addedToFavorites" (click)="addToFavorites(contact)" mat-icon-button matTooltip="Add to favorites">
             <mat-icon>favorite_border</mat-icon>
+        </button>
+
+        <button *ngIf="addedToFavorites" (click)="removeFromFavorites(contact)" mat-icon-button matTooltip="Remove from favorites">
+            <mat-icon>favorite</mat-icon>
         </button>
       </mat-card-actions>
 </mat-card>

@@ -6,6 +6,7 @@ import { AddComponent } from './pages/add/add.component';
 import { SearchComponent } from './pages/search/search.component';
 import { ContactDetailComponent } from './pages/contact-detail/contact-detail.component';
 import { HomeComponent } from './pages/home/home.component';
+import { FavoritesComponent } from './pages/favorites/favorites.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
       {
         path: 'contact/:id',
         component: ContactDetailComponent
+      },
+      {
+        path: 'favorites',
+        component: FavoritesComponent
       },
       {
         path: '**',

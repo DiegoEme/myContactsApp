@@ -33,4 +33,17 @@ export class ContactsService {
   deleteContact(contact: Contact): Observable<any> {
     return this.http.delete<any>(`http://localhost:3000/contacts/${contact.id}`)
   }
+
+  getFavorites(): Observable<Contact[]> {
+    return this.http.get<Contact[]>('http://localhost:3000/favorites')
+  }
+
+  addToFavorites(contact: Contact): Observable<Contact> {
+    return this.http.post<Contact>(`http://localhost:3000/favorites/`, contact)
+  }
+
+  removeFromFavoites(contact: Contact): Observable<Contact>{
+    return this.http.delete<Contact>(`http://localhost:3000/favorites/${contact.id}`)
+  }
+  
 }
